@@ -1,0 +1,263 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+/*
+
+font-family: 'Poiret One', cursive;
+*/
+
+
+/*resets*/
+
+* {
+	padding: 0px;
+	margin: 0px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	list-style-type: none;
+}
+
+body {
+	font-family: 'Poiret One', cursive;
+	background: url(../images/bg.jpg);
+	font-weight: 300;
+	font-size: 15px;
+	color: #333;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
+}
+
+header {
+	background-color: rgba(0,0,0,0.1);
+	position: relative;
+	text-align: center;
+	padding: 2vw;
+}
+
+header h1 {
+	font-size: 34px;
+	padding: 15px;
+}
+
+.main {
+	position: relative;
+}
+
+/*the grid*/
+
+ul.my_grid {
+
+	text-align: center;
+}
+
+
+
+.my_grid:after {
+	clear: both;
+}
+
+ul.my_grid li {
+	width: 22vw;
+	height: 22vw;
+	display: inline-block;
+	margin: 1vw;
+}
+
+/*item specific styles*/
+
+.my_item {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	cursor:pointer;
+	-webkit-perspective: 400px;
+	perspective: 300px;
+	
+	
+}
+.my_info{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+	
+	
+
+}
+.my_info > div {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	-webkit-transition: all 0.8s ;
+
+	transition:all 0.8 linear ;
+	-webkit-transform-origin: 50% 0%;
+
+	transform-origin: 50% 0%;
+		background-size:cover;
+/*	border-radius: 100%*/;
+}
+
+.my_info .my_info-front {
+
+		box-shadow: inset 0 0 0px 16px rgba(255,255,255,0.3), 5px 5px 15px rgba(0,0,0,0.7);
+
+}
+
+.my_info .my_info-back {
+		box-shadow: inset 0 0 0px 16px rgba(255,255,255,0.3), 5px 5px 15px rgba(0,0,0,0.7);
+	-webkit-transform: translateZ(-250px) rotateX(90deg);
+	transform: translateZ(-250px) rotateX(90deg);
+	opacity: 0;
+
+}
+
+.my_img-1 { 
+	background-image: url(../images/c1.jpg);
+}
+
+.my_img-2 { 
+	background-image: url(../images/c2.jpg);
+}
+
+.my_img-3 { 
+	background-image: url(../images/c3.jpg);
+}
+
+.my_img-4 { 
+	background-image: url(../images/c4.jpg);
+}
+
+
+.my_img-1  + .my_info-back{
+	background-image: url(../images/c1_back.jpg) ;
+}
+
+.my_img-2  + .my_info-back{
+	background-image: url(../images/c2_back.jpg);
+}
+
+.my_img-3 + .my_info-back{
+	background-image: url(../images/c3_back.jpg) ;
+}
+
+.my_img-4 + .my_info-back{
+	background-image: url(../images/c4_back.jpg) ;
+}
+
+
+.my_info h3 {
+	color: #fff;
+	
+	/*text-transform: uppercase;*/
+	letter-spacing: 2px;
+	font-size: 18px;
+	margin: 30px 15px;
+	padding:5px;
+	text-shadow:1px 1px 1px  #000;
+	font-weight:400;
+}
+
+.my_info h4 {
+	color:rgba(255,176,43,1.00);
+	letter-spacing: 2px;
+	font-size: 14px;
+	margin: 30px 20px 2px 20px;
+	padding:5px;
+	text-shadow:1px 1px 1px  #000;
+	font-weight:100;
+	
+}
+
+.my_info  p{
+	color:#FFF;
+	padding:7px 25px;
+	font-style: normal;
+	text-align:center;
+	margin: 10 30px;
+	font-size: 15px;
+	font-weight:300;
+	text-shadow:1px 1px 1px  #000;
+}
+
+.my_info p.golook {
+	text-align:center;
+	color:#FFD664;
+	padding: 10px 5px;
+	font-size: 15px;
+	font-weight:700;
+	letter-spacing: 2px;
+}
+
+.my_info p a {
+	display: block;
+	color:rgba(255,251,227,1.00);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
+	padding-top: 10px;
+	font-family:"Helvetica Neue", sans-serif;
+}
+
+
+.my_item.my_clicked .my_info-front {
+	-webkit-transform: translateY(30vw) rotateX(-90deg);
+	transform: translateY(30vw) rotateX(-90deg);
+	opacity: 0;
+	
+}
+
+.my_item.my_clicked .my_info-back {
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+	opacity: 1;
+
+}
+
+section p{
+	padding: 2vw;
+	font-size: 1.7em;
+	text-align: center;
+}
+
+
+/*medium********************************************/
+@media only screen  and (max-width : 800px) {
+	
+	ul.my_grid li {
+	width: 46vw;
+	height: 46vw;
+	
+}
+	
+}
+	
+	
+	/*small*******************************************/
+@media only screen  and (max-width : 400px) {
+	
+	ul.my_grid li {
+	width: 90vw;
+	height: 90vw;
+	
+}
+	
+}
+	
